@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Website - Multiple Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Image jaisa light yellow/orange background */
+            background: linear-gradient(to bottom,orange, white, green); 
+            margin: 0;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px; /* Padding thodi adjust ki hai */
+            border-radius: 12px;
+            /* Card ka orange border */
+            border: 3px solid #FFA500; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px; 
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto; 
+            border-radius: 10px;
+            margin-bottom: 15px;
+            /* Image par halka sa shadow */
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2); 
+        }
+        
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 24px;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column; 
+            gap: 12px; 
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s; 
+        }
+
+        /* --- Updated Special Gradient Button --- */
+        .btn-special {
+            /* Image jaisa orange/yellow gradient */
+            background: linear-gradient(to bottom, #FFC107, #FF9800); 
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-special:hover {
+            background: linear-gradient(to bottom, #FF9800, #FFC107);
+            transform: translateY(-2px); 
+        }
+
+        /* Normal Blue Button */
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+            border: 2px solid #007BFF;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Outline Button */
+        .btn-outline {
+            background-color: transparent;
+            color: #FF9800;
+            border: 2px solid #FF9800;
+        }
+        
+        .btn-outline:hover {
+            background-color: #FF9800;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="chhava.jpg" alt="Chhava Poster">
+            <h2>Chhava (2025)</h2>
+            <p>Quality: WEB-DL <br> 4K | 1080p | 720p | 480p</p>
+            
+            <div class="button-group">
+                <a href="https://hubcloud.foo/drive/x1v3jthm1jj2th1" target="_blank" class="btn btn-special">🎥 4K (2160p) [17.4 GB]</a>
+                <a href="https://pixeldrain.dev/u/cdm5TZ5A" target="_blank" class="btn btn-special">🎥 1080p (HEVC) [2.1 GB]</a>
+                <a href="https://pixeldrain.dev/u/M95TMKUw" target="_blank" class="btn btn-special">🎥 1080p (10Bit) [2.5 GB] </a>
+                <a href="https://pixeldrain.dev/u/EqkbpVoc" target="_blank" class="btn btn-special">🎥 720p 10Bit HEVC [1 GB]</a>
+                <a href="https://pixeldrain.dev/u/QLWf5B2u" target="_blank" class="btn btn-special">🎥 720p HEVC [951 MB]</a>
+                <a href="https://pixeldrain.dev/u/WXnFDSr3" target="_blank" class="btn btn-special">🎥 1080p WEB-DL [6.2GB]</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="rkmovies.jpg" alt="Follow Us">
+            <h2>FOLLOW US ON</h2>
+            <p>Follow for Daily updates and new UPCOMING Movies 🎥🎞️</p>
+            
+            <div class="button-group">
+                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary">INSTAGRAM</a>
+                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline">WHATSAPP CHANNEL</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

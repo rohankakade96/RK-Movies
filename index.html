@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        /* Basic Page Settings */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, orange, white, orange);
+            background-size: 400% 400%;
+            animation: gradientMove 5s ease infinite;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+            box-sizing: border-box; 
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Top Details (Photo & Title) */
+        h1 {
+            position: relative; 
+            left: 15px; 
+            top: -15px;
+            color: darkorange;
+        }
+
+        .corner-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute; 
+            top: 10px;
+            right: 15px;
+            border: 3px solid #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        /* --- SEARCH BAR CSS --- */
+        .search-container {
+            width: 100%;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        #searchBar {
+            width: 80%;
+            max-width: 500px;
+            padding: 12px 20px;
+            border: 3px solid #ff9800;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #searchBar:focus {
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.5);
+            width: 85%; /* Thoda sa expand hoga focus karne par */
+        }
+        /* ----------------------- */
+
+        /* YEH HAI MAIN GRID JO CARDS KO DOUBLE LINE MEIN RAKHEGA */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+        }
+
+        /* YAHAN CARD KO FLEX BANA DIYA HAI */
+        .card {
+            padding: 10px;
+            border: 3px solid #ff9800;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: white; 
+            
+            /* Magic start */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 0px 5px;
+        }
+
+        .card h3, .card h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* YAHAN BUTTON KO SABSE NICHE DHAKEL DIYA HAI */
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: orange; 
+            color: white; 
+            border: 2px solid #ff9800; 
+            padding: 8px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px; 
+            transition: all 0.2s ease; 
+            cursor: pointer;
+            
+            /* Button Hamesha Bottom Pe Rahega */
+            margin-top: auto; 
+        }
+
+        .button:hover {
+            background-color: #ff9800; 
+            box-shadow: 4px 4px 0px rgba(255, 152, 0, 0.4); 
+            transform: translateY(-2px);
+        }
+
+        /* Pagination Settings */
+        .pagination {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            grid-column: 1 / -1; /* Pagination ko dono column ke center mein lane ke liye */
+        }
+
+        .next-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #ff9800;
+            color: white;
+            padding: 5px 40px; 
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid #ff9800;
+            border-radius: 0px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .next-btn:hover {
+            background-color: transparent;
+            color: #ff9800;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body> 
+    <h1><i>RK MOVIES</i></h1>
+    <img src="Maharaj.jpg" alt="Meri Photo" class="corner-photo">
+
+    <h2 style="color: olivedrab;text-align: center;"><i>Made By Rohan</i></h2>
+    <p style="color: green;text-align:center;">All upcoming MOVIES is here</p>
+
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="filterMovies()" placeholder="Search Movies, Quality, or Genre...">
+    </div>
+
+    <div class="container" id="movieContainer">
+        <div class="card">
+            <img src="chhava.jpg" alt="Image 3">
+            <h3>Chhava (2025)</h3>
+            <p>Quality: WEB-DL 4K | 1080p | 720p | 480p |</p>
+            <a href="http://localhost:7700/Chhava%20Subpage.html"class="button">Download</a>
+        </div>
+
+        <div class="card">
+            <img src="Kapil Show.jpg" alt="Image 1">
+            <h3>Great Kapil Show</h3>
+            <p>Genre: Talk | Comedy Stars: Kapil Sharma</p>
+            <a href="http://localhost:7700/Kapil%20Subpage.html"class="button">Download</a>
+        </div>
+
+        <div class="card">
+            <img src="dhurandhar.jpg" alt="Image 2">
+            <h3>Dhurandhar (2025)</h3>
+            <p>Quality: WEB-DL 4K | 1080p | 720p | 480p |</p>
+            <a href="http://localhost:7700/Dhurandhar%20Subpage.html" class="button">Download</a>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200/7cb342" alt="Image 3">
+            <h2>Teesra Item</h2>
+            <p>Yeh aapke teesre item ki detail hai.</p>
+            <a href="https://www.wikipedia.org" class="button">Download</a>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200/ff7f7f" alt="Image 2">
+            <h2>Doosra Item</h2>
+            <p>Yeh aapke doosre item ki detail hai.</p>
+            <a href="https://www.youtube.com" target="_blank" class="button">Download</a>
+        </div>
+
+        <div class="pagination">
+            <a href="http://localhost:7700/Next%20page.html" class="next-btn">Next Page &raquo;</a>
+        </div>
+    </div>
+
+    <script>
+        function filterMovies() {
+            // Search input ki value lena aur use lowercase mein badalna
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            // Saare cards ko select karna
+            let cards = document.querySelectorAll('.card');
+
+            // Har card ko ek ek karke check karna
+            cards.forEach(card => {
+                // Card ke andar ka saara text read karna
+                let cardText = card.innerText.toLowerCase();
+                
+                // Agar search wali value card ke text mein match karti hai
+                if (cardText.includes(input)) {
+                    card.style.display = "flex"; // Aapki existing design ke hisaab se show karega
+                } else {
+                    card.style.display = "none"; // Hide kar dega
+                }
+            });
+        }
+    </script>
+</body>
+</html>

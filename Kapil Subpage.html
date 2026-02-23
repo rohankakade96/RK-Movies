@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Website - Multiple Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* 1st Code jaisa light yellow/orange/green background */
+            background: linear-gradient(to bottom, orange, white, green); 
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh; /* Background ko puri screen par failane ke liye */
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px; 
+            border-radius: 12px;
+            /* Card ka orange border */
+            border: 3px solid #FFA500; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px; 
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto; 
+            border-radius: 10px;
+            margin-bottom: 15px;
+            /* Image par halka sa shadow */
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2); 
+        }
+        
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 24px;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column; 
+            gap: 12px; 
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s; 
+        }
+
+        /* --- Updated Special Gradient Button --- */
+        .btn-special {
+            /* 1st code jaisa orange/yellow gradient */
+            background: linear-gradient(to bottom, #FFC107, #FF9800); 
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-special:hover {
+            background: linear-gradient(to bottom, #FF9800, #FFC107);
+            transform: translateY(-2px); 
+        }
+
+        /* Normal Blue Button */
+        .btn-primary {
+            background-color: transparent;
+            color: orange;
+            border: 2px solid orange;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: orange;
+        }
+
+        /* Outline Button */
+        .btn-outline {
+            background-color: transparent;
+            color: #FF9800;
+            border: 2px solid #FF9800;
+        }
+        
+        .btn-outline:hover {
+            background-color: #FF9800;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="Kapil Show.jpg" alt="Profile Image">
+            <h2>Great Kapil Show🔥</h2>
+            <p>iMDB Rating: 6.5/10<br>
+            Genre: Talk | Comedy<br>
+            Stars: Kapil Sharma, Sunil Grover, Krushna Abhishek<br>
+            Creator: Kapil Sharma<br>
+            No. of Episodes: 10 [For Now]<br>
+            Language: Hindi DD5.1 / ESubs<br>
+            Quality: WEB-DL 1080p | 720p | 480p</p>
+            
+            <div class="button-group">
+                <a href="https://gadgetsweb.xyz/?id=WFJhSmRZZlp0TG81eE5odHdtb2tZUTQwVnRmUHoyQzBjUytlcHJNZjZCU3ovVE5jdi9SODJsMCtJTTZicER0QXQ0YnJwalM0K0xTclVHYWttNnpwTGtkZ2J1TlVmQ1ZhaUtGTlAwSEU3NTA9" class="btn btn-special">🎥 EPISODE :- 1</a>
+                <a href="https://gadgetsweb.xyz/?id=WFJhSmRZZlp0TG81eE5odHdtb2tZUTQwVnRmUHoyQzBjUytlcHJNZjZCU3ovVE5jdi9SODJsMCtJTTZicER0QWI1TkRmd2szQk1Cd3R6czY5MTBIUFp5RzR0OXBnbkJVcmRsTWZpVVhCOW89" class="btn btn-special">🎥 EPISODE :- 2</a>
+                <a href="https://gadgetsweb.xyz/?id=WFJhSmRZZlp0TG81eE5odHdtb2tZUTQwVnRmUHoyQzBjUytlcHJNZjZCU3ovVE5jdi9SODJsMCtJTTZicER0QXBxZ0lTZ1dKb1NNTkxPVzlsUDlBcjh5ZmJwNTFSZGNMTndUcUdIVXpobDQ9" class="btn btn-special">🎥 EPISODE :- 3</a>
+                <a href="https://gadgetsweb.xyz/?id=WFJhSmRZZlp0TG81eE5odHdtb2tZUTQwVnRmUHoyQzBjUytlcHJNZjZCU3ovVE5jdi9SODJsMCtJTTZicER0QStnem1mdTAvNG1DQ0VXNGtxVkpveEhOVUova0JlZlNhSW1DWXJnbkxkcGs9" class="btn btn-special">🎥 EPISODE :- 4</a>
+                <a href="https://gadgetsweb.xyz/?id=WFJhSmRZZlp0TG81eE5odHdtb2tZUTQwVnRmUHoyQzBjUytlcHJNZjZCU3ovVE5jdi9SODJsMCtJTTZicER0QVkzejNyNDdBQUU3bllMWmUzdUlWWCtjREVUN0JjdTcxNXN5bzFXRXc1aE09" class="btn btn-special">🎥 EPISODE :- 5</a>
+                <a href="https://gadgetsweb.xyz/?id=WFJhSmRZZlp0TG81eE5odHdtb2tZUTQwVnRmUHoyQzBjUytlcHJNZjZCU3ovVE5jdi9SODJsMCtJTTZicER0QVZiNEFoR2lDOEpuK0dNSjRRcHYxWFVVZldHN1NuMnFZS2VrVjBpYzNqUDA9" class="btn btn-special">🎥 EPISODE :- 6</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="rkmovies.jpg" alt="Project Image">
+            <h2>FOLLOW US ON</h2>
+            <p>Follow for Daily updates and new UPCOMING Movies 🎥🎞️</p>
+            
+            <div class="button-group">
+                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary">INSTAGRAM</a>
+                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline">WHATSAPP CHANNEL</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
