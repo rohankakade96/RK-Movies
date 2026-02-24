@@ -12,8 +12,8 @@
             background: linear-gradient(-45deg, orange, white, orange);
             background-size: 400% 400%;
             animation: gradientMove 5s ease infinite;
-            font-family: Arial, sans-serif;
-            padding: 40px 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 20px;
             box-sizing: border-box; 
         }
 
@@ -23,25 +23,89 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Top Details (Photo & Title) */
-        h1 {
-            position: relative; 
-            left: 15px; 
-            top: -15px;
+        /* --- HEADER LAYOUT (Safe & Perfect) --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Button aur Title ke beech ka gap */
+        }
+
+        .hamburger {
+            font-size: 35px;
+            cursor: pointer;
             color: darkorange;
+            transition: transform 0.3s ease;
+            background: white;
+            padding: 0px 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            margin: 0;
+            color: darkorange;
+            font-size: 32px;
         }
 
         .corner-photo {
-            width: 100px;
+            width: 120px;
+            margin-top: -10px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            position: absolute; 
-            top: 10px;
-            right: 15px;
             border: 3px solid #ffffff;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
+        }
+
+        /* SIDE MENU CSS */
+        .side-menu {
+            height: 30vh;
+            width: 0; 
+            position: fixed;
+            z-index: 1002;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 152, 0, 0.8);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+        }
+
+        .side-menu a {
+            padding: 15px 20px 15px 32px;
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .side-menu a:hover {
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .side-menu .close-btn {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            font-size: 40px;
+            margin-left: 50px;
+            background: none;
         }
 
         /* --- SEARCH BAR CSS --- */
@@ -49,6 +113,7 @@
             width: 100%;
             margin-bottom: 25px;
             text-align: center;
+            margin-top: 15px;
         }
 
         #searchBar {
@@ -65,11 +130,10 @@
 
         #searchBar:focus {
             box-shadow: 0 4px 15px rgba(255, 152, 0, 0.5);
-            width: 85%; /* Thoda sa expand hoga focus karne par */
+            width: 85%;
         }
-        /* ----------------------- */
 
-        /* YEH HAI MAIN GRID JO CARDS KO DOUBLE LINE MEIN RAKHEGA */
+        /* MAIN GRID */
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -77,7 +141,7 @@
             width: 100%;
         }
 
-        /* YAHAN CARD KO FLEX BANA DIYA HAI */
+        /* CARD FLEX */
         .card {
             padding: 10px;
             border: 3px solid #ff9800;
@@ -85,8 +149,6 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             background-color: white; 
-            
-            /* Magic start */
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -104,14 +166,16 @@
         .card h3, .card h2 {
             margin: 0 0 10px 0;
             color: #333;
+            font-size: 18px;
         }
 
         .card p {
             color: #666;
             margin-bottom: 20px;
+            font-size: 14px;
         }
 
-        /* YAHAN BUTTON KO SABSE NICHE DHAKEL DIYA HAI */
+        /* BUTTON */
         .button {
             display: inline-block;
             text-decoration: none;
@@ -125,8 +189,6 @@
             border-radius: 5px; 
             transition: all 0.2s ease; 
             cursor: pointer;
-            
-            /* Button Hamesha Bottom Pe Rahega */
             margin-top: auto; 
         }
 
@@ -141,7 +203,7 @@
             text-align: center;
             margin-top: 40px;
             margin-bottom: 40px;
-            grid-column: 1 / -1; /* Pagination ko dono column ke center mein lane ke liye */
+            grid-column: 1 / -1; 
         }
 
         .next-btn {
@@ -149,7 +211,7 @@
             text-decoration: none;
             background-color: #ff9800;
             color: white;
-            padding: 5px 40px; 
+            padding: 8px 40px; 
             font-size: 18px;
             font-weight: bold;
             border: 2px solid #ff9800;
@@ -166,11 +228,23 @@
     </style>
 </head>
 <body> 
-    <h1><i>RK MOVIES</i></h1>
-    <img src="Maharaj.jpg" alt="Meri Photo" class="corner-photo">
 
-    <h2 style="color: olivedrab;text-align: center;"><i>Made By Rohan</i></h2>
-    <p style="color: green;text-align:center;">All upcoming MOVIES is here</p>
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+        <a href="Marathi.html">Marathi Movies 🍿</a>
+        <a href="Naya_Webpage.html">New Webpage Link</a>
+    </div>
+
+    <div class="main-header">
+        <div class="header-left">
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            <h1><i>RK MOVIES</i></h1>
+        </div>
+        <img src="Maharaj.jpg" alt="Meri Photo" class="corner-photo">
+    </div>
+
+    <h2 style="color: olivedrab; text-align: center; margin: 10px 0;"><i>Made By Rohan</i></h2>
+    <p style="color: green; text-align: center; margin-bottom: 20px;">All upcoming MOVIES is here</p>
 
     <div class="search-container">
         <input type="text" id="searchBar" onkeyup="filterMovies()" placeholder="Search Movies, Quality, or Genre...">
@@ -179,61 +253,70 @@
     <div class="container" id="movieContainer">
         <div class="card">
             <img src="chhava.jpg" alt="Image 3">
-            <h3>Chhava (2025)</h3>
+            <h3>👑Chhava👑 (2025)</h3>
             <p>Quality: WEB-DL 4K | 1080p | 720p | 480p |</p>
-            <a href="Chhava Subpage.html"class="button">Download</a>
+            <a href="Chhava Subpage.html" class="button">Download</a>
         </div>
 
         <div class="card">
             <img src="Kapil Show.jpg" alt="Image 1">
-            <h3>Great Kapil Show</h3>
-            <p>Genre: Talk | Comedy Stars: Kapil Sharma</p>
-            <a href="Kapil Subpage.html"class="button">Download</a>
+            <h3>Great Kapil Show (S4)</h3>
+            <p>Genre: Talk Comedy Stars: Kapil Sharma</p>
+            <a href="Kapil Subpage.html" class="button">Download</a>
         </div>
 
         <div class="card">
             <img src="dhurandhar.jpg" alt="Image 2">
             <h3>Dhurandhar (2025)</h3>
             <p>Quality: WEB-DL 4K | 1080p | 720p | 480p |</p>
-            <a href="Dhurandhar Subpage.html"class="button">Download</a>
+            <a href="Dhurandhar Subpage.html" class="button">Download</a>
         </div>
 
         <div class="card">
             <img src="arjun.jpg" alt="Image 3">
-            <h3>Arjun Reddy</h3>
-            <p>Yeh aapke teesre item ki detail hai.</p>
-            <a href="https://www.wikipedia.org" class="button">Download</a>
+            <h3>Arjun Reddy(2017)</h3>
+            <p>Quality: WEB-DL 1080p | 720p | 480p |</p>
+            <a href="Arjun Subpage.html" class="button">Download</a>
         </div>
 
         <div class="card">
-            <img src="oromeo.jpg" alt="Image 2">
-            <h3>O'Romeo</h3>
-            <p>Yeh aapke doosre item ki detail hai.</p>
-            <a href="https://www.youtube.com"class="button">Download</a>
+            <img src="vanaveera.jpg" alt="Image 2">
+            <h3>Vanaveera (2026)</h3>
+            <p>Quality: WEB-DL 1080p | 720p | 480p</p>
+            <a href="vanaveera.html" class="button">Download</a>
         </div>
-
+        
+<div class="card">
+            <img src="oromeo.jpg" alt="Image 2">
+            <h3>O'Romeo (2026)</h3>
+            <p>Quality: HQ-HDTC 1080p | 720p | 480p |</p>
+            <a href="O'Romeo.html" class="button">Download</a>
+        </div>
         <div class="pagination">
             <a href="http://localhost:7700/Next%20page.html" class="next-btn">Next Page &raquo;</a>
         </div>
     </div>
 
     <script>
+        function toggleMenu() {
+            let menu = document.getElementById("sideMenu");
+            if (menu.style.width === "250px") {
+                menu.style.width = "0";
+            } else {
+                menu.style.width = "250px";
+            }
+        }
+
         function filterMovies() {
-            // Search input ki value lena aur use lowercase mein badalna
             let input = document.getElementById('searchBar').value.toLowerCase();
-            // Saare cards ko select karna
             let cards = document.querySelectorAll('.card');
 
-            // Har card ko ek ek karke check karna
             cards.forEach(card => {
-                // Card ke andar ka saara text read karna
                 let cardText = card.innerText.toLowerCase();
-                
-                // Agar search wali value card ke text mein match karti hai
                 if (cardText.includes(input)) {
-                    card.style.display = "flex"; // Aapki existing design ke hisaab se show karega
+                    card.style.display = "flex"; 
                 } else {
-                    card.style.display = "none"; // Hide kar dega
+                    card.style.display = "none"; 
                 }
             });
         }
