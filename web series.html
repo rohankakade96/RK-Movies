@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RK MOVIES Hub</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>Web Series</title>
     <style>
         /* Basic Page Settings */
         body {
@@ -34,6 +31,7 @@
             margin-bottom: 10px;
             padding-top: 10px;
         }
+
         .header-left {
             display: flex;
             align-items: center;
@@ -43,8 +41,8 @@
             font-size: 25px;
             cursor: pointer;
             color: darkorange;
-            transition: transform 0.3s ease;
-            background: white;
+            transition:transform 0.3s ease;
+            background : white;
             padding: 0px 10px;
             border-radius: 10px;
             box-shadow: 0 0px 5px rgba(0,0,0,0.2);
@@ -57,46 +55,15 @@
             color: black;
             font-size: 22px;
         }
-        /* Top Corner Photo Circle CSS */
         .corner-photo {
-            width: 70px; /* Thoda chota kiya hai taaki perfect lage, aap chaho toh wapas 100px kar lena */
-            height: 70px;
+            width: 100px;
             margin-top: -10px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 0px solid white; /* Halki si white border di hai */
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+            border: 0px solid #ffffff;
+            box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.9);
         }
-        .img-link {
-            display: block;
-            text-decoration: none;
-        }
-        /* --- CREATOR SECTION (Made By Rohan & Socials) --- */
-        .creator-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Logos aur text ke beech ka space */
-            margin: 15px 0 5px 0;
-        }
-        .creator-section h2 {
-            color: olivedrab;
-            font-family: cursive;
-            font-size: 32px; 
-            margin: 0;
-        }
-        .social-logo {
-            font-size: 35px; /* Logos ka size */
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-        .social-logo:hover {
-            transform: scale(1.2); /* Touch karne par logo thoda bada hoga */
-        }
-        /* WhatsApp Color */
-.logo-whatsapp { color: #25D366; } 
-        .logo-tele { color: #0088cc; } /* Telegram Color */
-
         /* SIDE MENU CSS */
         .side-menu {
             height: 30vh;
@@ -105,7 +72,7 @@
             z-index: 1002;
             top: 0;
             left: 0;
-            background-color: rgba(255, 152, 0, 0.9);
+            background-color: rgba(255, 152, 0, 0.8);
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
@@ -133,21 +100,22 @@
             background: none;
         }
         
-        /* --- CATEGORY BUTTONS CSS --- */
+        /* --- NEW: CATEGORY BUTTONS CSS --- */
         .category-buttons {
             display: flex;
             justify-content: center;
-            gap: 5px; /* Spacing kam hai jaisa aapne pucha tha */
+            gap: 15px;
             margin-bottom: 5px;
             flex-wrap: wrap;
+            /* Agar screen choti ho toh adjust ho jayega */
         }
         .cat-btn {
             background-color: white;
             color: black;
             border: 2px solid #ff9800;
-            padding: 8px 20px;
+            padding: 8px 25px;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 15px;
             font-weight: bold;
             border-radius: 20px;
             transition: all 0.3s ease;
@@ -171,18 +139,17 @@
             width: 80%;
             max-width: 500px;
             padding: 12px 20px;
-            border: 3px solid olivedrab;
+            border: 3px solid #ff9800;
             border-radius: 25px;
-            font-size: 14px;
+            font-size: 16px;
             outline: none;
-            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         #searchBar:focus {
             box-shadow: 0 4px 15px rgba(255, 152, 0, 0.5);
             width: 85%;
         }
-
         /* MAIN GRID */
         .container {
             display: grid;
@@ -190,7 +157,6 @@
             gap: 15px;
             width: 100%;
         }
-
         /* CARD FLEX */
         .card {
             padding: 10px;
@@ -214,9 +180,13 @@
         .card h3, .card h2 {
             margin: 0 0 10px 0;
             color: #333;
-            font-size: 15px;
+            font-size: 18px;
         }
-        
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
         /* BUTTON */
         .button {
             display: inline-block;
@@ -225,7 +195,7 @@
             color: white; 
             border: 2px solid #ff9800; 
             padding: 8px 20px;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
             text-align: center;
             border-radius: 5px; 
@@ -238,12 +208,11 @@
             box-shadow: 4px 4px 0px rgba(255, 152, 0, 0.4); 
             transform: translateY(-2px);
         }
-
         /* Pagination Settings */
         .pagination {
             text-align: center;
             margin-top: 40px;
-            margin-bottom: 80px; /* Thoda space badhaya taaki bottom button pe overalap na ho */
+            margin-bottom: 40px;
             grid-column: 1 / -1; 
         }
         .next-btn {
@@ -264,45 +233,6 @@
             color: #ff9800;
             transform: translateY(-2px);
         }
-
-        /* --- REQUEST MOVIE BUTTON CSS (CENTERED & WIDE) --- */
-        .request-movie-btn {
-            position: fixed;
-            bottom: 10px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-            padding: 12px 20px; 
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-            gap: 10px; 
-            width: 80%; 
-            max-width: 400px;
-            font-size: 14px;
-        }
-        
-        .request-movie-btn:hover {
-            transform: translateX(-50%) scale(1.03) translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-            color: white;
-        }
-        
-        .request-movie-btn svg {
-            width: 24px; 
-            height: 24px;
-            fill: white; 
-        }
-
     </style>
 </head>
 <body> 
@@ -314,33 +244,18 @@
 
     <div class="main-header">
         <div class="header-left">
-            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
-            <h1 style="font-size: 200%;"><i>RK MOVIES</i></h1>
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span><h1 style="font-size: 150%;"><i>RK MOVIES</i></h1>
         </div>
-        
-        <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="img-link" target="_blank">
-            <img src="rohan.jpg" alt="Rohan Profile" class="corner-photo">
-        </a>
+        <img src="rohan.jpg" alt="Meri Photo" class="corner-photo">
     </div>
 
-    <div class="creator-section">
-<a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="social-logo logo-whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-        <h2><i>Made By Rohan</i></h2>
-        <a href="https://t.me/rkmovieshubnew" class="social-logo logo-tele" target="_blank">
-            <i class="fab fa-telegram-plane"></i>
-        </a>
-    </div>
+    <h2 style="color: olivedrab; text-align: center; margin: 10px 0; display: flex; justify-content: center; font-family: cursive; font-size: 200%;"><i>Made By Rohan</i></h2>
     <p style="color: green; text-align: center; margin-bottom: 20px; font-size: 80%;">All upcoming MOVIES is here</p>
+    <h1 style="text-align: center;font-size: 200%;margin-bottom: 20px;color: lightseagreen;">Web Series</h1>
+
 
     <div class="category-buttons">
-        <a href="marathi.html" class="cat-btn">Marathi</a>
-        <a href="hotstar.html" class="cat-btn">Hotstar Specials</a>
-        <a href="web series.html" class="cat-btn">Web Series</a>
-        <a href="hollywood.html" class="cat-btn">Hollywood</a>
-        <a href="punjabi.html" class="cat-btn">Punjabi</a>
+        <a href="index.html" class="cat-btn">HOME</a>
     </div>
 
     <div class="search-container">
@@ -349,67 +264,45 @@
 
     <div class="container" id="movieContainer">
         <div class="card">
-            <img src="The-Kerala-Story-2-Goes-Beyond-2026-HDHub4u.Ms.jpg" alt="Image 3">
-            <h3>The Kerela Story 2 (2026)</h3>
-            <a href="kerela story 2 subpage.html" class="button">Download</a>
+            <img src="Kapil Show.jpg" alt="Image 3">
+            <h3>Great Kapil Show (S4)</h3>
+            <a href="Kapil Subpage.html" class="button">Download</a>
         </div>
+
         <div class="card">
-            <img src="border 2.jpg" alt="Image 3">
-            <h3>BORDER 2 (2026)</h3>
-            <a href="border 2 subpage.html" class="button">Download</a>
+            <img src="" alt="Image 1">
+            <h3></h3>
+            <a href="" class="button">Download</a>
         </div>
+
         <div class="card">
-            <img src="roslin.jpg" alt="Image 3">
-            <h3>Secret Stories-Roslin (2026)</h3>
-            <a href="roslin subpage.html" class="button">Download</a>
+            <img src="" alt="Image 2">
+            <h3></h3>
+            <a href="" class="button">Download</a>
         </div>
+
         <div class="card">
-            <img src="chhava.jpg" alt="Image 3">
-            <h3>👑Chhava👑 (2025)</h3>
-            <a href="Chhava Subpage.html" class="button">Download</a>
+            <img src="" alt="Image 3">
+            <h3></h3>
+            <a href="" class="button">Download</a>
         </div>
+
         <div class="card">
-            <img src="rajasaab.jpg" alt="Image 1">
-            <h3>The Rajasaab (2026)</h3>
-            <a href="rajasaab subpage.html" class="button">Download</a>
+            <img src="" alt="Image 2">
+            <h3></h3>
+            <a href="" class="button">Download</a>
         </div>
+        
         <div class="card">
-            <img src="dhurandhar.jpg" alt="Image 2">
-            <h3>Dhurandhar (2025)</h3>
-            <a href="Dhurandhar Subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="baby girl.jpg" alt="Image 2">
-            <h3>Baby Girl (2026) DS4K</h3>
-            <a href="baby girl subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="arjun.jpg" alt="Image 3">
-            <h3>Arjun Reddy (2017)</h3>
-            <a href="Arjun Subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="vanaveera.jpg" alt="Image 2">
-            <h3>Vanaveera (2026)</h3>
-            <a href="vanaveera.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="oromeo.jpg" alt="Image 2">
-            <h3>O'Romeo (2026)</h3>
-            <a href="O'Romeo.html" class="button">Download</a>
+            <img src="" alt="Image 2">
+            <h3></h3>
+            <a href="" class="button">Download</a>
         </div>
 
         <div class="pagination">
             <a href="http://localhost:7700/Next%20page.html" class="next-btn">Next Page &raquo;</a>
         </div>
     </div>
-
-    <a href="https://ig.me/m/rohan_kakade_96" class="request-movie-btn" target="_blank">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-        Just send me the MOVIE Name
-    </a>
 
     <script>
         function toggleMenu() {

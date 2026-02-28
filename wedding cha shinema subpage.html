@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meri Website - Multiple Links</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <style>
-        body {
-            margin: 0;
+        body {margin: 0;
             min-height: 100vh;
             background: linear-gradient(-45deg, orange, white, orange);
             background-size: 400% 400%;
@@ -24,21 +20,6 @@
             100% { background-position: 0% 50%; }
         }
         
-        /* --- Top Nav aur Home Button ki CSS add ki gayi hai --- */
-        .top-nav {
-            display: flex;
-            justify-content: center; 
-            margin-bottom: 30px;
-            width: 100%;
-        }
-        
-        .home-btn {
-            font-size: 24px; 
-            padding: 15px 100px; 
-            border-radius: 40px; 
-            box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4); 
-        }
-
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -48,8 +29,9 @@
 
         .card {
             background-color: white;
-            padding: 15px; 
+            padding: 15px; /* Padding thodi adjust ki hai */
             border-radius: 12px;
+            /* Card ka orange border */
             border: 3px solid #FFA500; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
@@ -61,6 +43,7 @@
             height: auto; 
             border-radius: 10px;
             margin-bottom: 15px;
+            /* Image par halka sa shadow */
             box-shadow: 0 5px 5px rgba(0,0,0,0.2); 
         }
         
@@ -83,12 +66,8 @@
             gap: 12px; 
         }
 
-        /* btn class ko inline-flex kiya hai taaki icon aur text center mein rahein */
         .btn {
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center;
-            gap: 8px; 
+            display: inline-block;
             padding: 12px 15px;
             border-radius: 6px;
             font-weight: bold;
@@ -97,7 +76,9 @@
             transition: 0.3s; 
         }
 
+        /* --- Updated Special Gradient Button --- */
         .btn-special {
+            /* Image jaisa orange/yellow gradient */
             background: linear-gradient(to bottom, #FFC107, #FF9800); 
             color: white;
             border: none;
@@ -109,6 +90,7 @@
             transform: translateY(-2px); 
         }
 
+        /* Normal Blue Button */
         .btn-primary {
             background-color: transparent;
             color: orange;
@@ -120,6 +102,7 @@
             color: white;
         }
 
+        /* Outline Button */
         .btn-outline {
             background-color: transparent;
             color: #FF9800;
@@ -134,30 +117,17 @@
 </head>
 <body>
 
-    <div class="top-nav">
-        <a href="index.html" class="btn btn-special home-btn"><i class="fas fa-home"></i>Go To The WEBSITE</a>
-    </div>
-
     <div class="container">
 
         <div class="card">
-            <img src="roslin.jpg" alt="Secret Stories Roslin Poster">
-            <h2><i>Secret Stories-Roslin (2026)<br>Hotstar Specials</i></h2>
-            <p>iMDB Rating: x/10<br>
-            Genre: Drama | Mystery | Thriller<br>
-            Stars: Meena, Anishma Anilkumar, Sanjana Dipu<br>
-            Director: Sumesh Nandakumar<br>
-            No. of Episodes: 6<br>
-            Language: Dual Audio [Hindi (DD5.1) + Malayalam] / ESubs<br>
-            Quality: WEB-DL 4K | 1080p | 720p | 480p</p>
+            <img src="wedding cha shinema.jpg" alt="Chhava Poster">
+            <h2><i>Wedding Cha Shinema</i></h2>
+            <p></p>
             
             <div class="button-group">
-                <a href="https://pixeldrain.dev/u/vMJY6qtx" class="btn btn-special">480p x264 [750MB] Zip File</a>
-                <a href="https://pixeldrain.dev/u/turU4ENP" class="btn btn-special">720p x264 [1.8GB] Zip File</a>
-                <a href="https://pixeldrain.dev/u/aePeUsx2" class="btn btn-special">1080p 10Bit HEVC [3.1GB] Zip File</a>
-                <a href="https://pixeldrain.dev/u/uJLDkCzh" class="btn btn-special">1080p x264 [4GB] Zip File</a>
-                <a href="https://pixeldrain.dev/u/E1zcx1Be" class="btn btn-special">1080p WEB-DL PACK [6.3GB] Zip File</a>
-                <a href="https://hub.raj.lat/d213eb21b065950ab82b420b637017ce?token=1772171340139" class="btn btn-special">4K/2160p SDR WEB-DL PACK [15.2GB] Zip File</a>
+                <a href="https://pixeldrain.dev/u/J3LamrTw" class="btn btn-special">480p (412 MB)</a>
+                <a href="https://pixeldrain.dev/u/VaT7q3u6" class="btn btn-special">720p (1.11 GB)</a>
+                <a href="https://pixeldrain.dev/u/NbvNpYrh" class="btn btn-special">1080p (1.42 GB)</a>
             </div>
         </div>
 
@@ -167,9 +137,9 @@
             <p>Follow for Daily updates and new UPCOMING Movies 🎥🎞️</p>
             
             <div class="button-group">
-                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-                <a href="https://t.me/rkmovieshubnew" class="btn btn-outline"><i class="fab fa-telegram-plane"></i> TELEGRAM</a>
+                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary">INSTAGRAM</a>
+                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline">WHATSAPP CHANNEL</a>
+                <a href="https://t.me/rkmovieshubnew" class="btn btn-outline">TELEGRAM CHANNEL</a>
             </div>
         </div>
     </div>
