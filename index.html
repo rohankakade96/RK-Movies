@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RK MOVIES Hub</title>
@@ -8,6 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+    .logo-container img {
+    width: 200px;  /* Aap ise 60px se 120px ke beech rakh sakte hain */
+    height: auto; /* Isse photo khinchegi nahi */
+    border-radius: 50px;
+    box-shadow: 0px 0px 5px;
+}
+
         /* Basic Page Settings */
         body {
             margin: 0;
@@ -26,13 +34,14 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- HEADER LAYOUT (Safe & Perfect) --- */
+        /* --- HEADER LAYOUT --- */
         .main-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
             padding-top: 10px;
+            gap: 25px;
         }
         .header-left {
             display: flex;
@@ -57,27 +66,28 @@
             color: black;
             font-size: 22px;
         }
-        /* Top Corner Photo Circle CSS */
+        
+        /* Top Corner Photo */
         .corner-photo {
-            width: 70px; /* Thoda chota kiya hai taaki perfect lage, aap chaho toh wapas 100px kar lena */
-            height: 70px;
+            width: 65px;
+            height: 65px;
             margin-top: -10px;
             border-radius: 50%;
             object-fit: cover;
-            border: 0px solid white; /* Halki si white border di hai */
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         }
         .img-link {
             display: block;
             text-decoration: none;
         }
-        /* --- CREATOR SECTION (Made By Rohan & Socials) --- */
+
+        /* --- CREATOR SECTION --- */
         .creator-section {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px; /* Logos aur text ke beech ka space */
-            margin: 15px 0 5px 0;
+            gap: 15px; 
+            margin: 0px; 
         }
         .creator-section h2 {
             color: olivedrab;
@@ -86,18 +96,25 @@
             margin: 0;
         }
         .social-logo {
-            font-size: 35px; /* Logos ka size */
+            font-size: 35px;
             text-decoration: none;
             transition: transform 0.3s ease;
         }
         .social-logo:hover {
-            transform: scale(1.2); /* Touch karne par logo thoda bada hoga */
+            transform: scale(1.2); 
         }
-        /* WhatsApp Color */
-.logo-whatsapp { color: #25D366; } 
-        .logo-tele { color: #0088cc; } /* Telegram Color */
+        .logo-whatsapp { color: #25D366; } 
+        .logo-tele { color: #0088cc; }
 
-        /* SIDE MENU CSS */
+        .tagline {
+            color: green; 
+            text-align: center; 
+            margin-bottom: 15px; 
+            font-size: 70%;
+            font-weight: bold;
+        }
+
+        /* --- SIDE MENU --- */
         .side-menu {
             height: 30vh;
             width: 0; 
@@ -133,37 +150,38 @@
             background: none;
         }
         
-        /* --- CATEGORY BUTTONS CSS --- */
+        /* --- CATEGORY BUTTONS --- */
         .category-buttons {
             display: flex;
             justify-content: center;
-            gap: 5px; /* Spacing kam hai jaisa aapne pucha tha */
-            margin-bottom: 5px;
+            gap: 8px; 
+            margin-bottom: 10px;
             flex-wrap: wrap;
         }
         .cat-btn {
             background-color: white;
             color: black;
             border: 2px solid #ff9800;
-            padding: 8px 20px;
+            padding: 8px 15px;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: bold;
             border-radius: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
-        .cat-btn:hover {
+        .cat-btn.active, .cat-btn:hover {
             background-color: #ff9800;
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 6px 10px rgba(255, 152, 0, 0.4);
         }
 
-        /* --- SEARCH BAR CSS --- */
+        /* --- SEARCH BAR --- */
         .search-container {
             width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
             margin-top: 15px;
         }
@@ -171,7 +189,7 @@
             width: 80%;
             max-width: 500px;
             padding: 12px 20px;
-            border: 3px solid olivedrab;
+            border: 3px solid orange;
             border-radius: 25px;
             font-size: 14px;
             outline: none;
@@ -183,15 +201,27 @@
             width: 85%;
         }
 
-        /* MAIN GRID */
+        /* --- MAIN GRID --- */
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 10px; 
             width: 100%;
+            padding-bottom: 20px;
         }
-
-        /* CARD FLEX */
+        @media (min-width: 600px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+                gap: 15px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+            }
+        }
+        
+        /* --- CARD STYLE --- */
         .card {
             padding: 10px;
             border: 3px solid #ff9800;
@@ -201,8 +231,13 @@
             background-color: white; 
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             height: 100%;
             box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
         }
         .card img {
             width: 100%;
@@ -211,10 +246,11 @@
             margin-bottom: 15px;
             box-shadow: 0 0px 5px;
         }
-        .card h3, .card h2 {
-            margin: 0 0 10px 0;
+        .card h3 {
+            margin: 0 0 15px 0;
             color: #333;
-            font-size: 15px;
+            font-size: 10px;
+            flex-grow: 1;
         }
         
         /* BUTTON */
@@ -224,11 +260,11 @@
             background-color: orange; 
             color: white; 
             border: 2px solid #ff9800; 
-            padding: 8px 20px;
-            font-size: 14px;
+            padding: 8px 10px;
+            font-size: 5px;
             font-weight: bold;
             text-align: center;
-            border-radius: 5px; 
+            border-radius: 10px; 
             transition: all 0.2s ease; 
             cursor: pointer;
             margin-top: auto; 
@@ -239,33 +275,48 @@
             transform: translateY(-2px);
         }
 
-        /* Pagination Settings */
+        /* --- PAGINATION CSS --- */
         .pagination {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 80px; /* Thoda space badhaya taaki bottom button pe overalap na ho */
             grid-column: 1 / -1; 
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+            margin-bottom: 10px;
         }
-        .next-btn {
-            display: inline-block;
-            text-decoration: none;
+        .page-btn {
+            background-color: white;
+            color: #ff9800;
+            border: 2px solid #ff9800;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .page-btn:hover {
             background-color: #ff9800;
             color: white;
-            padding: 8px 40px; 
-            font-size: 18px;
-            font-weight: bold;
-            border: 2px solid #ff9800;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-        }
-        .next-btn:hover {
-            background-color: transparent;
-            color: #ff9800;
             transform: translateY(-2px);
         }
+        .page-btn.active-page {
+            background-color: #ff9800;
+            color: white;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+        }
+        .page-btn:disabled {
+            border-color: #ccc;
+            color: #ccc;
+            cursor: not-allowed;
+            background-color: #f9f9f9;
+            box-shadow: none;
+            transform: none;
+        }
 
-        /* --- REQUEST MOVIE BUTTON CSS (CENTERED & WIDE) --- */
+        /* --- REQUEST MOVIE BUTTON --- */
         .request-movie-btn {
             position: fixed;
             bottom: 10px; 
@@ -296,51 +347,58 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.4);
             color: white;
         }
-        
-        .request-movie-btn svg {
-            width: 24px; 
-            height: 24px;
-            fill: white; 
-        }
 
     </style>
 </head>
 <body> 
+<body>
+
+    
+    </body>
+
     <div id="sideMenu" class="side-menu">
         <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
-        <a href="Marathi.html">Marathi Movies 🍿</a>
-        <a href="Naya_Webpage.html">New Webpage Link</a>
+        <a href="#" onclick="filterByCategory('marathi'); toggleMenu();">Marathi Movies 🍿</a>
+        <a href="disclaimer.html">Copyright Disclaimer ©️</a>
+    </div>
+    
+    <div class="main-header" style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
+    
+    <span class="hamburger" onclick="toggleMenu()" style="font-size: 30px; cursor: pointer;">&#9776;</span>
+
+    <div class="logo-container" style="text-align: center; flex-grow: 1;">
+        <img src="rkmovieshub.png" alt="RK Movies Logo" style="height: 50px; display: block; margin: 0 auto;">
+        <span style="font-size: 18px; font-weight: bold; color: #333; display: block; margin-top: 5px;">
+            RK MOVIES HUB
+        </span>
     </div>
 
-    <div class="main-header">
-        <div class="header-left">
-            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
-            <h1 style="font-size: 200%;"><i>RK MOVIES</i></h1>
-        </div>
-        
-        <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="img-link" target="_blank">
-            <img src="rohan.jpg" alt="Rohan Profile" class="corner-photo">
-        </a>
-    </div>
+    <a href="https://www.instagram.com/rohan_kakade_96" class="img-link" target="_blank">
+        <img src="rohan.jpg" alt="Rohan Profile" class="corner-photo">
+    </a>
+
+</div>
+
 
     <div class="creator-section">
-<a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="social-logo logo-whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
+        <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="social-logo logo-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
         <h2><i>Made By Rohan</i></h2>
         <a href="https://t.me/rkmoviezhub" class="social-logo logo-tele" target="_blank">
             <i class="fab fa-telegram-plane"></i>
         </a>
     </div>
-    <p style="color: green; text-align: center; margin-bottom: 20px; font-size: 80%;">All upcoming MOVIES is here</p>
+    
+    <p class="tagline">All upcoming MOVIES is here</p>
 
     <div class="category-buttons">
-        <a href="marathi.html" class="cat-btn">Marathi</a>
-        <a href="hotstar.html" class="cat-btn">Hotstar Specials</a>
-        <a href="web series.html" class="cat-btn">Web Series</a>
-        <a href="hollywood.html" class="cat-btn">Hollywood</a>
-        <a href="punjabi.html" class="cat-btn">Punjabi</a>
+        <button class="cat-btn active" onclick="filterByCategory('all')">All</button>
+        <button class="cat-btn" onclick="filterByCategory('marathi')">Marathi</button>
+        <button class="cat-btn" onclick="filterByCategory('hotstar')">Hotstar Specials</button>
+        <button class="cat-btn" onclick="filterByCategory('webseries')">Web Series</button>
+        <button class="cat-btn" onclick="filterByCategory('south')">South</button>
+        <button class="cat-btn" onclick="filterByCategory('punjabi')">Punjabi</button>
     </div>
 
     <div class="search-container">
@@ -348,80 +406,123 @@
     </div>
 
     <div class="container" id="movieContainer">
-        <div class="card">
-            <img src="accussed.jpg" alt="Image 3">
+        
+        <div class="card" data-category="all">
+            <img src="accussed.jpg" alt="ACCUSED">
             <h3>ACCUSED Full Movie (2026)</h3>
             <a href="accussed subpage.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="The-Kerala-Story-2-Goes-Beyond-2026-HDHub4u.Ms.jpg" alt="Image 3">
+        <div class="card" data-category="all">
+            <img src="The-Kerala-Story-2-Goes-Beyond-2026-HDHub4u.Ms.jpg" alt="The Kerala Story 2">
             <h3>The Kerela Story 2 (2026)</h3>
             <a href="kerela story 2 subpage.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="border 2.jpg" alt="Image 3">
-            <h3>BORDER 2 (2026)</h3>
-            <a href="border 2 subpage.html" class="button">Download</a>
+        <div class="card" data-category="all">
+            <img src="tanvi the great.jpg" alt="Tanvi The Great">
+            <h3>Tanvi The Great (2025) Hindi Full Movie</h3>
+            <a href="tanvi subpage.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="ikkis.jpg" alt="Image 3">
-            <h3>IKKIS (2026) Full Movie</h3>
-            <a href="ikkis subpage.html" class="button">Download</a>
+        <div class="card" data-category="webseries">
+            <img src="Kapil Show.jpg" alt="kapil show">
+            <h3>Great Kapil Show (S4)</h3>
+            <a href="Kapil Subpage.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="roslin.jpg" alt="Image 3">
-            <h3>Secret Stories-Roslin (2026)</h3>
-            <a href="roslin subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="chhava.jpg" alt="Image 3">
-            <h3>👑Chhava👑 (2025)</h3>
-            <a href="Chhava Subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="rajasaab.jpg" alt="Image 1">
-            <h3>The Rajasaab (2026)</h3>
-            <a href="rajasaab subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="dhurandhar.jpg" alt="Image 2">
-            <h3>Dhurandhar (2025)</h3>
-            <a href="Dhurandhar Subpage.html" class="button">Download</a>
-        </div>
-        <div class="card">
-            <img src="baby girl.jpg" alt="Image 2">
+        <div class="card" data-category="south">
+            <img src="baby girl.jpg" alt="Baby Girl">
             <h3>Baby Girl (2026) DS4K</h3>
             <a href="baby girl subpage.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="arjun.jpg" alt="Image 3">
+        <div class="card" data-category="all">
+            <img src="chhava.jpg" alt="Chhava">
+            <h3>👑Chhava👑 (2025)</h3>
+            <a href="Chhava Subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="all">
+            <img src="dhurandhar.jpg" alt="Dhurandhar">
+            <h3>Dhurandhar (2025)</h3>
+            <a href="Dhurandhar Subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="hotstar">
+            <img src="roslin.jpg" alt="Roslin">
+            <h3>Secret Stories-Roslin (2026)</h3>
+            <a href="roslin subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="all">
+            <img src="border 2.jpg" alt="Border 2">
+            <h3>BORDER 2 (2026)</h3>
+            <a href="border 2 subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="south">
+            <img src="rajasaab.jpg" alt="The Rajasaab">
+            <h3>The Rajasaab (2026)</h3>
+            <a href="rajasaab subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="marathi">
+            <img src="phullwanti.jpg" alt="phullwanti">
+            <h3>Phullwanti (2024)</h3>
+            <a href="phullwanti subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="marathi">
+            <img src="wedding cha shinema.jpg" alt="wedding cha shinema">
+            <h3>Wedding Cha Shinema (2026)</h3>
+            <a href="wedding cha shinema subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="south">
+            <img src="arjun.jpg" alt="Arjun Reddy">
             <h3>Arjun Reddy (2017)</h3>
             <a href="Arjun Subpage.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="vanaveera.jpg" alt="Image 2">
+        <div class="card" data-category="all">
+            <img src="ikkis.jpg" alt="IKKIS">
+            <h3>IKKIS (2026) Full Movie</h3>
+            <a href="ikkis subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="punjabi">
+            <img src="poorna.jpg" alt="Poorna">
+            <h3>Poorna (2026)</h3>
+            <a href="poorna subpage.html" class="button">Download</a>
+        </div>
+        <div class="card" data-category="south">
+            <img src="vanaveera.jpg" alt="Vanaveera">
             <h3>Vanaveera (2026)</h3>
             <a href="vanaveera.html" class="button">Download</a>
         </div>
-        <div class="card">
-            <img src="oromeo.jpg" alt="Image 2">
+        <div class="card" data-category="all">
+            <img src="oromeo.jpg" alt="O'Romeo">
             <h3>O'Romeo (2026)</h3>
             <a href="O'Romeo.html" class="button">Download</a>
         </div>
+        <div class="pagination" id="paginationBox"></div>
 
-        <div class="pagination">
-            <a href="http://localhost:7700/Next%20page.html" class="next-btn">Next Page &raquo;</a>
-        </div>
     </div>
 
     <a href="https://ig.me/m/rohan_kakade_96" class="request-movie-btn" target="_blank">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
+        <i class="fab fa-instagram" style="font-size: 20px;"></i>
         Just send me the MOVIE Name
     </a>
+    
+        <div style="margin: 0px auto 20px auto; padding: 15px; max-width: 800px; background: rgba(255, 255, 255, 0.9); border-radius: 15px; border: 1px dashed orange; text-align: center; font-size: 12px; color: #555; line-height: 1.6;">
+        <h4 style="margin-top: 0; color: #d35400; font-size: 14px;">DMCA & Content Disclaimer</h4>
+        <p>
+            <strong>RK MOVIES Hub</strong> is a link-sharing platform. We want to clarify that we <strong>do not host or upload</strong> any videos, movies, or media files on our own servers or Cloudflare Workers. 
+        </p>
+        <p>
+            All content, including movie posters and download links, are gathered from various third-party sources on the internet (like HDHub4u,Filmywap, etc.). The download links point to external file-sharing services such as <strong>Pixeldrain</strong>. We have no control over the content hosted on these external websites.
+        </p>
+        <p style="font-style: italic; font-weight: bold;">
+            If you are a copyright owner and want any content removed, please contact us via Instagram or Telegram. We respect intellectual property and will remove the reported link within 24-48 hours.
+        </p>
+        <p style="margin-bottom: 20px;">© 2026 RK MOVIES Hub | Made with ❤️ for Movie Lovers</p>
+    </div>
+</body>
 
     <script>
+        // Pagination Variables
+        let currentCategory = 'all';
+        const itemsPerPage = 10; // Ek page par 8 cards dikhenge, aap isko change kar sakte hain
+        let currentPage = 1;
+        let filteredCardsGlobal = []; 
+
         function toggleMenu() {
             let menu = document.getElementById("sideMenu");
             if (menu.style.width === "410px") {
@@ -431,19 +532,125 @@
             }
         }
 
-        function filterMovies() {
+        // Card Filtering Logic
+        function applyFilters() {
             let input = document.getElementById('searchBar').value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
+            let allCards = Array.from(document.querySelectorAll('.card'));
+            
+            filteredCardsGlobal = []; // Array reset
 
-            cards.forEach(card => {
-                let cardText = card.innerText.toLowerCase();
-                if (cardText.includes(input)) {
-                    card.style.display = "flex"; 
-                } else {
-                    card.style.display = "none"; 
+            allCards.forEach(card => {
+                let title = card.querySelector('h3').innerText.toLowerCase();
+                let category = card.getAttribute('data-category') || 'all';
+
+                let matchesSearch = title.includes(input);
+                let matchesCategory = (currentCategory === 'all' || category === currentCategory);
+
+                if (matchesSearch && matchesCategory) {
+                    filteredCardsGlobal.push(card);
+                }
+                card.style.display = "none"; // Hide all temporarily
+            });
+
+            // Reset to page 1 after any filter/search
+            currentPage = 1; 
+            renderPagination();
+            showPage(currentPage);
+        }
+
+        // Show specific page cards
+        function showPage(page) {
+            currentPage = page;
+            
+            // Hide all filtered cards first
+            filteredCardsGlobal.forEach(card => card.style.display = 'none');
+
+            // Find starting and ending index for current page
+            let start = (currentPage - 1) * itemsPerPage;
+            let end = start + itemsPerPage;
+
+            for (let i = start; i < end && i < filteredCardsGlobal.length; i++) {
+                filteredCardsGlobal[i].style.display = 'flex';
+            }
+            
+            updatePaginationButtons();
+        }
+
+        // Render Page Number Buttons
+        function renderPagination() {
+            let paginationBox = document.getElementById('paginationBox');
+            paginationBox.innerHTML = ''; 
+            
+            let totalPages = Math.ceil(filteredCardsGlobal.length / itemsPerPage);
+            
+            // Agar result hi nahi hai ya sirf 1 page hai toh pagination chupao
+            if (totalPages <= 1) return; 
+
+            // Prev Button
+            let prevBtn = document.createElement('button');
+            prevBtn.innerHTML = "&laquo; Prev";
+            prevBtn.className = "page-btn";
+            prevBtn.onclick = () => { if(currentPage > 1) showPage(currentPage - 1); };
+            paginationBox.appendChild(prevBtn);
+
+            // Number Buttons
+            for(let i = 1; i <= totalPages; i++) {
+                let pageBtn = document.createElement('button');
+                pageBtn.innerText = i;
+                pageBtn.className = "page-btn page-num";
+                pageBtn.onclick = () => showPage(i);
+                paginationBox.appendChild(pageBtn);
+            }
+
+            // Next Button
+            let nextBtn = document.createElement('button');
+            nextBtn.innerHTML = "Next &raquo;";
+            nextBtn.className = "page-btn";
+            nextBtn.onclick = () => { if(currentPage < totalPages) showPage(currentPage + 1); };
+            paginationBox.appendChild(nextBtn);
+        }
+
+        // Update Active Button Classes
+        function updatePaginationButtons() {
+            let totalPages = Math.ceil(filteredCardsGlobal.length / itemsPerPage);
+            let buttons = document.querySelectorAll('#paginationBox .page-btn');
+            if(buttons.length === 0) return;
+
+            // Prev aur Next buttons ko disable karna agar zaroorat ho
+            buttons[0].disabled = (currentPage === 1);
+            buttons[buttons.length - 1].disabled = (currentPage === totalPages);
+
+            // Active page number highlight
+            document.querySelectorAll('.page-num').forEach(btn => {
+                btn.classList.remove('active-page');
+                if(parseInt(btn.innerText) === currentPage) {
+                    btn.classList.add('active-page');
                 }
             });
         }
+
+        function filterByCategory(cat) {
+            currentCategory = cat;
+            
+            // Category button ko highlight karne ke liye
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText.toLowerCase().replace(/\s/g, '') === cat.replace(/\s/g, '') || (cat === 'all' && btn.innerText === 'All')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            applyFilters();
+        }
+
+        function filterMovies() {
+            applyFilters();
+        }
+
+        // Initialize jab webpage pehli baar load ho
+        window.onload = () => {
+            applyFilters();
+        };
     </script>
 </body>
 </html>
