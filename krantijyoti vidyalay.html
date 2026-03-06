@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meri Website - Multiple Links</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        body {margin: 0;
+        body {
+            margin: 0;
             min-height: 100vh;
             background: linear-gradient(-45deg, orange, white, orange);
             background-size: 400% 400%;
@@ -20,6 +24,20 @@
             100% { background-position: 0% 50%; }
         }
         
+        .top-nav {
+            display: flex;
+            justify-content: center; 
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        .home-btn {
+    font-size: 24px; 
+    /* 15px upar-neeche ke liye, aur 100px left-right (horizontally) ke liye */
+    padding: 15px 100px; 
+    border-radius: 40px; 
+    box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4); 
+}
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -29,9 +47,8 @@
 
         .card {
             background-color: white;
-            padding: 15px; /* Padding thodi adjust ki hai */
+            padding: 15px; 
             border-radius: 12px;
-            /* Card ka orange border */
             border: 3px solid #FFA500; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
@@ -43,7 +60,6 @@
             height: auto; 
             border-radius: 10px;
             margin-bottom: 15px;
-            /* Image par halka sa shadow */
             box-shadow: 0 5px 5px rgba(0,0,0,0.2); 
         }
         
@@ -67,7 +83,10 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex; /* Text aur icon ko center mein rakhne ke liye inline-flex kiya */
+            align-items: center; 
+            justify-content: center;
+            gap: 8px; /* Icon aur text ke beech thoda space */
             padding: 12px 15px;
             border-radius: 6px;
             font-weight: bold;
@@ -76,9 +95,7 @@
             transition: 0.3s; 
         }
 
-        /* --- Updated Special Gradient Button --- */
         .btn-special {
-            /* Image jaisa orange/yellow gradient */
             background: linear-gradient(to bottom, #FFC107, #FF9800); 
             color: white;
             border: none;
@@ -90,7 +107,6 @@
             transform: translateY(-2px); 
         }
 
-        /* Normal Blue Button */
         .btn-primary {
             background-color: transparent;
             color: orange;
@@ -102,7 +118,6 @@
             color: white;
         }
 
-        /* Outline Button */
         .btn-outline {
             background-color: transparent;
             color: #FF9800;
@@ -117,26 +132,35 @@
 </head>
 <body>
 
+    <div class="top-nav">
+        <a href="index.html" class="btn btn-special home-btn"><i class="fas fa-home"></i>Go To The WEBSITE</a>
+    </div>
+
     <div class="container">
 
         <div class="card">
-            <img src="chhava.jpg" alt="Chhava Poster">
-            <h2><i>Chhava (2025)</i></h2>
-            <p>iMDB Rating: 8.1/10
-Genre: Action | Drama | History
-Stars: Vicky Kaushal, Akshaye Khanna, Rashmika Mandanna
-Director: Laxman Utekar
-Language: Hindi DD5.1 / ESubs
-Quality: WEB-DL 4K | 1080p | 720p | 480p</p>
+            <img src="2026-03-05-05-21-44-969.jpg" alt="Movie Poster">
+            <h2><i>Krantijyoti Vidyalay Marathi Madhyam (2026)</i></h2>
+            <p>IMDb Rating:
+9.2/10<br>
+Release Year: 2026<br>
+Genre: Comedy, Drama<br>
+Quality: 480p|720p|1080p WEB-DL<br>
+File Size: 420MB|
+870MB|2.1GB<br>
+Language: Marathi<br>
+Director: Hemant Dhome<br>
+Star Cast: Prajakta Koli, Siddharth Chandekar, Kshitee
+Jog<br></p>
             
             <div class="button-group">
-                <a href="https://hubcloud.foo/drive/x1v3jthm1jj2th1" class="btn btn-special">🎥 4K (2160p) [17.4 GB]</a>
-                <a href="https://pixeldrain.dev/u/cdm5TZ5A" class="btn btn-special">🎥 1080p (HEVC) [2.1 GB]</a>
-                <a href="https://pixeldrain.dev/u/M95TMKUw" class="btn btn-special">🎥 1080p (10Bit) [2.5 GB] </a>
-                <a href="https://pixeldrain.dev/u/EqkbpVoc" class="btn btn-special">🎥 720p 10Bit HEVC [1 GB]</a>
-                <a href="https://pixeldrain.dev/u/QLWf5B2u" class="btn btn-special">🎥 720p HEVC [951 MB]</a>
-                <a href="https://pixeldrain.dev/u/WXnFDSr3" class="btn btn-special">🎥 1080p WEB-DL [6.2GB]</a>
-                                <a href="https://youtu.be/77vRyWNqZjM?si=Hz4CUFkADolSq3Iu" class="btn btn-special"><i class="fas fa-film"></i> WATCH TRAILER</a>
+                <a href="https://gplinks.co/b2rhf" class="btn btn-special">480p (395 MB)</a>
+                <a href="https://pixeldrain.dev/u/EtZMV8Bw" class="btn btn-special">720p (800 MB)</a>
+                <a href="https://pixeldrain.dev/u/FRTFyCkr" class="btn btn-special">1080p (1.470 GB)</a>
+                <a href="https://youtu.be/ovx5RO_szg0?si=eplSeO4L4peE_BWF" class="btn btn-special">🔥How To Open Link🔥</a>
+                <a href="" class="btn btn-special">🔥SUBSCRIBE channel for latest Movies updates🔥</a>
+                <a href="https://t.me/rkmovieshubnew" class="btn btn-special">Join Telegram For Links</a>
+                <a href="https://youtu.be/YvE2Ba7vfz8?si=-jdKNfBgoBY0KWU-" class="btn btn-special"><i class="fas fa-film"></i> WATCH TRAILER</a>
             </div>
         </div>
 
@@ -146,9 +170,9 @@ Quality: WEB-DL 4K | 1080p | 720p | 480p</p>
             <p>Follow for Daily updates and new UPCOMING Movies 🎥🎞️</p>
             
             <div class="button-group">
-                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary">INSTAGRAM</a>
-                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline">WHATSAPP CHANNEL</a>
-                <a href="https://t.me/rkmovieshubnew" class="btn btn-outline">TELEGRAM CHANNEL</a>
+                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WHATSAPP CHANNEL</a>
+                <a href="https://t.me/rkmovieshubnew" class="btn btn-outline"><i class="fab fa-telegram-plane"></i> TELEGRAM CHANNEL</a>
             </div>
         </div>
     </div>
