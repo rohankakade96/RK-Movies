@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, orange, white, orange);
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Baaki ka saara CSS code jo humne pehle likha tha... */
+
+/* How to Download Button Styles */
+.howto-container {
+    text-align: center;
+    margin: 20px auto 30px auto;
+    max-width: 600px;
+    padding: 0 15px;
+}
+
+.btn-howto {
+    background: linear-gradient(to right, #4CAF50, #2E7D32); /* Hare (Green) rang ka button taaki alag dikhe */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-howto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.4);
+}
+
+/* Hidden Text Box Styles */
+.howto-content {
+    display: none; /* Normal state mein chhupa rahega */
+    background: white;
+    border: 2px dashed #4CAF50;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeInDown 0.4s ease-out;
+}
+
+.howto-content.active {
+    display: block; /* Click karne par dikhega */
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.howto-content h3 {
+    text-align: center;
+    color: #2E7D32;
+    margin-top: 0;
+}
+
+.step-text {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.step-text b {
+    color: #FF9800;
+}
+
+.warning-box {
+    background-color: #FFF3CD;
+    color: #856404;
+    padding: 10px;
+    border-left: 4px solid #FFA500;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 15px;
+}
