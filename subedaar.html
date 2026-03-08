@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK MOVIES Hub</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, orange, white, orange);
+            background-size: 400% 400%;
+            animation: gradientMove 5s ease infinite;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .top-nav {
+            display: flex;
+            justify-content: center; 
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        .home-btn {
+            font-size: 24px; 
+            padding: 15px 100px; 
+            border-radius: 40px; 
+            box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4); 
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px; 
+            border-radius: 12px;
+            border: 3px solid #FFA500; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px; 
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto; 
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2); 
+        }
+        
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 24px;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column; 
+            gap: 12px; 
+        }
+
+        .btn {
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 8px; 
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s; 
+        }
+
+        .btn-special {
+            background: linear-gradient(to bottom, #FFC107, #FF9800); 
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn-special:hover {
+            background: linear-gradient(to bottom, #FF9800, #FFC107);
+            transform: translateY(-2px); 
+        }
+
+        .btn-primary {
+            background-color: transparent;
+            color: orange;
+            border: 2px solid orange;
+        }
+        
+        .btn-primary:hover {
+            background-color: #FF9800;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #FF9800;
+            border: 2px solid #FF9800;
+        }
+        
+        .btn-outline:hover {
+            background-color: #FF9800;
+            color: white;
+        }
+
+        /* Loading state ke liye naya style */
+        .btn-loading {
+            pointer-events: none; /* Click disable karne ke liye */
+            opacity: 0.7; /* Thoda dhundhla dikhane ke liye */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <a href="index.html" class="btn btn-special home-btn"><i class="fas fa-home"></i>Go To The WEBSITE</a>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="Picsart_26-03-06_08-59-22-165.jpg" alt="Movie Poster">
+            <h2><i></i></h2>
+            <p></p>
+            
+            <div class="button-group">
+                <a href="https://pixeldrain.dev/u/LBjJfkeZ" class="btn btn-special"><i class="fas fa-download"></i>480p⚡[510MB]</a>
+                <a href="https://pixeldrain.dev/u/tSseuoiQ" class="btn btn-special"><i class="fas fa-download"></i>720p HEVC [830MB]</a>
+                <a href="https://pixeldrain.dev/u/FoPhANU1" class="btn btn-special"><i class="fas fa-download"></i>720p x 264 [1.2GB]</a>
+                <a href="https://pixeldrain.dev/u/Ch5FZuU1" class="btn btn-special"><i class="fas fa-download"></i>1080p HEVC [1.8GB]</a>
+                <a href="https://pixeldrain.dev/u/GGFm4LHv" class="btn btn-special"><i class="fas fa-download"></i>1080p WEB-DL [6.4GB]</a>
+                <a href="https://hub.pizzacdn.buzz/c0a9a805743819eefaa997e4ae9784f2?token=1772975544" class="btn btn-special"><i class="fas fa-download"></i>4K [2160p DV HDR WEB-DL – 15.2GB]</a>
+                <a href="https://youtu.be/wY1V7rEAQ3o?si=mBKc-MwJo2IvtDhr" class="btn btn-special"><i class="fas fa-film"></i> WATCH TRAILER</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="rkmovies.jpg" alt="Follow Us">
+            <h2>FOLLOW US ON</h2>
+            <p>Follow for Daily updates and new UPCOMING Movies 🎥🎞️</p>
+            
+            <div class="button-group">
+                <a href="https://www.instagram.com/rohan_kakade_96?igsh=ZG4wNnU1dTE1dGp1" class="btn btn-primary"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+                <a href="https://whatsapp.com/channel/0029VbCCHeAFsn0mhSJij41P" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WHATSAPP CHANNEL</a>
+                <a href="https://t.me/rkmoviezhub" class="btn btn-outline"><i class="fab fa-telegram-plane"></i> TELEGRAM CHANNEL</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", async () => {
+            const apiToken = '5993de467bdc613e017314414aa06255e254e761';
+            const excludeDomains = [
+                "youtube.com", "m.youtube", "youtu.be", "m.youtube.com", "www.youtube.com", 
+                "instagram.com", "www.instagram.com", "telegram.com", "www.telegram.com", "t.me", 
+                "www.whatsapp.com", "whatsapp.com", "facebook.com", "m.facebook.com"
+            ];
+
+            const links = document.querySelectorAll("a");
+
+            // Har ek link ko process karne ka function
+            const processLink = async (link) => {
+                let originalUrl = link.href;
+
+                // Blank, javascript, mailto, ya same page link ho toh ignore karo
+                if (!originalUrl || originalUrl.startsWith("javascript:") || originalUrl.startsWith("mailto:") || originalUrl === window.location.href) {
+                    return;
+                }
+
+                try {
+                    let urlObj = new URL(originalUrl);
+                    let domain = urlObj.hostname.replace('www.', '');
+
+                    // Check karein ki domain exclude list me hai ya apni hi website ka hai
+                    if (excludeDomains.includes(domain) || domain === window.location.hostname) {
+                        return; 
+                    }
+
+                    // --- Yahan se Link Convert hona shuru hoga ---
+                    
+                    // 1. Button ka purana text save karein
+                    let originalHTML = link.innerHTML;
+                    
+                    // 2. Button par loading spinner lagayein aur click disable karein
+                    link.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+                    link.classList.add("btn-loading");
+
+                    // 3. API Call karein
+                    let apiUrl = `https://gplinks.com/api?api=${apiToken}&url=${encodeURIComponent(originalUrl)}`;
+                    let response = await fetch(apiUrl);
+                    let data = await response.json();
+
+                    // 4. Agar success ho jaye toh naya link set karein
+                    if (data.status === 'success') {
+                        link.href = data.shortenedUrl;
+                    }
+
+                    // 5. Button ko wapas normal state me le aayein
+                    link.innerHTML = originalHTML;
+                    link.classList.remove("btn-loading");
+
+                } catch (error) {
+                    console.error("GPLink Error for:", originalUrl, error);
+                    // Error aane par bhi button ko wapas normal kar de, taaki user ruk na jaye
+                    link.innerHTML = link.innerHTML.replace('<i class="fas fa-spinner fa-spin"></i> Generating...', 'Download');
+                    link.classList.remove("btn-loading");
+                }
+            };
+
+            // Saare links ko ek saath convert karne ke liye (fast loading)
+            let promises = Array.from(links).map(processLink);
+            await Promise.all(promises);
+        });
+    </script>
+</body>
+</html>
