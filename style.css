@@ -1,7 +1,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(-45deg, orange, white, orange);
+    background: linear-gradient(-45deg,,pink, white,pink,);
     background-size: 400% 400%;
     animation: gradientMove 5s ease infinite;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -28,11 +28,12 @@ body {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3);
+    box-shadow: 0 0px 10px rgba(0, 128, 0, 0.3);
     transition: 0.3s;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .btn-howto:hover {
@@ -51,6 +52,7 @@ body {
     text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     animation: fadeInDown 0.4s ease-out;
+    font-size: 100%;
 }
 
 .howto-content.active {
@@ -71,7 +73,7 @@ body {
 .step-text {
     color: #444;
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -79,12 +81,56 @@ body {
     color: #FF9800;
 }
 
+/* Zaroori Baat (Warning Box) Animated Border */
 .warning-box {
-    background-color: #FFF3CD;
-    color: #856404;
-    padding: 10px;
-    border-left: 4px solid #FFA500;
-    border-radius: 5px;
+    position: relative;
+    background-color: #FFF3CD; /* Box ke andar ka light yellow color */
+    color: #856404; /* Text ka color */
+    padding: 15px;
+    border-radius: 8px;
     font-size: 14px;
-    margin-top: 15px;
+    margin-top: 20px;
+    z-index: 1;
+}
+/* Zaroori Baat (Warning Box) Animated Border Line */
+.warning-box {
+    /* Pehla gradient andar ke background ke liye, dusra border ke liye */
+    background: linear-gradient(#FFF3CD, #FFF3CD) padding-box, 
+                linear-gradient(90deg, red, pink, white, pink, red) border-box;
+    
+    border: 3px solid transparent; /* Border kitni moti rakhni hai, wo yahan set karein */
+    border-radius: 8px; /* Box ke kone gol karne ke liye */
+    
+    color: #856404; /* Text ka color */
+    padding: 15px;
+    font-size: 20px;
+    margin-top: 20px;
+    
+    /* Animation ki setting */
+    background-size: 100% 100%, 300% 100%;
+    animation: moveBorderLine 3s linear infinite;
+}
+
+/* Sirf border line ke colors ko ghumane ka animation */
+@keyframes moveBorderLine {
+    0%   { background-position: 0% 0%, 0% 50%; }
+    50%  { background-position: 0% 0%, 100% 50%; }
+    100% { background-position: 0% 0%, 0% 50%; }
+}
+
+/* Siren icon ko halke-halke shake karne ka animation */
+.siren-icon {
+    display: inline-block;
+    animation: shakeSiren 1.5s infinite;
+    font-size: 18px;
+}
+
+@keyframes shakeSiren {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-15deg); }
+    20% { transform: rotate(15deg); }
+    30% { transform: rotate(-15deg); }
+    40% { transform: rotate(15deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); } /* Baki time shant rahega, phir wapas hilega */
 }

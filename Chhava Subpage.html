@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RK MOVIES Hub</title>
+    <link rel="stylesheet" href="style.css">
+
     <style>
         body {margin: 0;
             min-height: 100vh;
@@ -116,6 +118,43 @@
     </style>
 </head>
 <body>
+
+    
+    <div class="howto-container">
+    <button class="btn-howto" onclick="toggleHowTo()">
+        <i class="fas fa-question-circle"></i> How to Download? (Click Here)
+    </button>
+    
+    <div class="howto-content" id="howtoBox">
+        <h3>📥 Download Karne Ka Aasan Tarika</h3>
+        
+        <div class="step-text">
+            👉 <b>Step 1:</b> Download Link <b>(निचे दिये गयेे ऑरेंज बटन )</b>BUTTON पर CLICK करें. एक नया पेज खुलेगा.
+        </div>
+        <div class="step-text">
+👉 <b>Step 2:</b> पेज पर <b>10-15 seconds का टाइमर </b> चलेगा, उसके खतम होने का इंतजार करे.
+        </div>
+        <div class="step-text">
+👉 <b>Step 3:</b> टाइमर 0 होने के बाद पेज के नीचे <b>"Open/Continue"</b> या <b>"Verify"</b> बटन पर CLICK करें.
+        </div>
+        <div class="step-text">
+ <b>Step 4:</b> आखरी पेज पर आपको <b>"Get Link"</b> का बटन मिलेगा. उसपर CLICK करते ही MOVIE मिल जायेगी!
+        </div>
+
+<div class="warning-box">
+    <b><span class="siren-icon">🚨</span> ZAROORI BAAT:</b> अगर किसी बटन पर क्लिक करने से कोई नया गलत पेज {Wrong Page} (Ad) खुल जाए, तो तुरंत अपने फोन का <b>BACK</b> बटन दबा दें और वापस पुराने पेज पर आ जाए.
+</div>
+
+    </div>
+</div>
+
+<script>
+    function toggleHowTo() {
+        var box = document.getElementById("howtoBox");
+        // Agar active class hai toh hata do (hide), nahi hai toh laga do (show)
+        box.classList.toggle("active");
+    }
+</script>
 
     <div class="container">
 
